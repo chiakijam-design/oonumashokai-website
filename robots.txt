@@ -1,0 +1,3 @@
+# Preview: HTML noindex excludes this page; allow crawlers to read that directive.
+User-agent: *
+Disallow:
