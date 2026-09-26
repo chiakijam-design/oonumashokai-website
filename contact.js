@@ -36,6 +36,7 @@
         form.reset();
         form.hidden = true;
         show('success');
+        document.dispatchEvent(new Event('oonuma:inquiry-success'));
       } else if (response.status === 429) show('limit');
       else if ([400,422].includes(response.status)) show('invalid');
       else show('error');
