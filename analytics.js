@@ -24,18 +24,26 @@
     for (const [name, value] of Object.entries(attrs)) script.setAttribute(name, value);
     document.head.appendChild(script);
   };
-  window.dataLayer.push({'gtm.start': Date.now(), event: 'gtm.js'});
-  load('https://www.googletagmanager.com/gtm.js?id=GTM-M3FMQLLP');
+  const start = () => {
+    window.dataLayer.push({'gtm.start': Date.now(), event: 'gtm.js'});
+    load('https://www.googletagmanager.com/gtm.js?id=GTM-M3FMQLLP');
+    // Wait until the page is visible before loading nonessential measurement.
+    if (!location.search) {
+      window.clarity = window.clarity || function () { (window.clarity.q = window.clarity.q || []).push(arguments); };
+      window.clarity('consentv2', {analytics_Storage: 'denied', ad_Storage: 'denied'});
+      load('https://www.clarity.ms/tag/yoaymaxfyd');
+    }
+  };
+  const schedule = () => {
+    if (window.requestIdleCallback) window.requestIdleCallback(start, {timeout: 2000});
+    else window.setTimeout(start, 0);
+  };
+  if (document.readyState === 'complete') schedule();
+  else window.addEventListener('load', schedule, {once: true});
   const event = name => gtag('event', name, {send_to: 'G-K2ZRJYXLEB'});
   document.addEventListener('click', e => {
     if (e.target instanceof Element && e.target.closest('a[href^="tel:"]')) event('phone_click');
   });
   // Dispatched only after Formspree confirms ok:true; no form data goes to analytics.
   document.addEventListener('oonuma:inquiry-success', () => event('generate_lead'));
-  // Clarity must not capture arbitrary URL parameters. Cookie setting is also OFF in its dashboard.
-  if (!location.search) {
-    window.clarity = window.clarity || function () { (window.clarity.q = window.clarity.q || []).push(arguments); };
-    window.clarity('consentv2', {analytics_Storage: 'denied', ad_Storage: 'denied'});
-    load('https://www.clarity.ms/tag/yoaymaxfyd');
-  }
 })();
