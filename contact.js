@@ -18,7 +18,7 @@
       if (!value && ['email','message'].includes(key)) data.delete(key);
       else data.set(key, value);
     }
-    if (!data.get('name') || !data.get('phone')) { show('invalid'); return; }
+    if (!data.get('name') || !data.get('phone') || !String(data.get('topic') || '').trim()) { show('invalid'); return; }
     busy = true;
     button.disabled = true;
     form.setAttribute('aria-busy','true');
