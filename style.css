@@ -62,9 +62,9 @@
 @media(max-width:700px){.hero{min-height:690px}.hero-contact-details{display:block;font-size:10px;margin-top:10px}.hero-contact-details strong{font-size:15px}.hero-content{padding-bottom:105px}.inquiry-prompt{padding:23px 20px;margin-top:30px}.inquiry-prompt h3{font-size:19px}.inquiry-prompt .button{width:100%}.service-row{grid-template-columns:22px minmax(0,1fr);gap:10px 13px}.service-row p{grid-column:2;grid-row:2}.service-row>a{grid-column:2;grid-row:3;justify-self:start;width:auto;padding-inline:16px;margin-top:4px}.contact-reassurance{font-size:12px}}
 @media(max-width:360px){.hero{min-height:645px}}
 /* One owner-supplied statement in the hero band. */
-.hero-statement{display:inline-block;max-width:100%;margin:0 0 30px;padding:20px 28px;background:#121b17eb;border-top:1px solid #bca878;border-bottom:1px solid #ffffff24;color:#f7f5ef;font-size:clamp(20px,2.1vw,28px);font-weight:700;line-height:1.6;letter-spacing:.035em}.hero-statement span{display:inline-block}
-@media(max-width:700px){.hero-statement{padding:16px 18px;margin-bottom:24px;font-size:18px;letter-spacing:.01em}}
-@media(max-width:360px){.hero-statement{padding:14px;font-size:16px;letter-spacing:0}}
+.hero-statement{display:inline-block;max-width:100%;margin:0 0 30px;color:#f7f5ef;font-size:clamp(20px,2.1vw,28px);font-weight:700;line-height:1.6;letter-spacing:.035em}.hero-statement span{display:inline-block}
+@media(max-width:700px){.hero-statement{margin-bottom:24px;font-size:18px;letter-spacing:.01em}}
+@media(max-width:360px){.hero-statement{font-size:16px;letter-spacing:0}}
 /* Corporate name and owner-supplied construction permit. */
 .brand-corporate{font-size:.46em;font-weight:600;letter-spacing:.015em;margin-right:.35em}.brand-sub{font-size:10px;letter-spacing:.025em;line-height:1.6;white-space:nowrap}
 @media(max-width:700px){.site-header{gap:12px}.brand-sub{font-size:9px;letter-spacing:0}.brand-corporate{margin-right:.2em}}
