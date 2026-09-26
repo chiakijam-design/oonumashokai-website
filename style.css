@@ -71,3 +71,6 @@
 @media(max-width:360px){.site-header .brand-name{font-size:26px}.site-header .brand-dot{font-size:32px}.site-header .brand-sub{font-size:8px}}
 /* Keep each hero phrase together when the heading wraps on small screens. */
 .hero-title-phrase{display:inline-block}
+
+/* Keep the URL abbreviation together in the company label. */
+.company-url-label{display:inline-block;white-space:nowrap}
