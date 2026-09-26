@@ -29,6 +29,11 @@
     load('https://www.googletagmanager.com/gtm.js?id=GTM-M3FMQLLP');
     // Wait until the page is visible before loading nonessential measurement.
     if (!location.search) {
+      // Cookie-free aggregate traffic/performance. No query URLs or SPA/hash tracking.
+      load('https://static.cloudflareinsights.com/beacon.min.js', {
+        type: 'module',
+        'data-cf-beacon': JSON.stringify({token: '81348843bae54c5c8ea099b16bc6ffa6', spa: false})
+      });
       window.clarity = window.clarity || function () { (window.clarity.q = window.clarity.q || []).push(arguments); };
       window.clarity('consentv2', {analytics_Storage: 'denied', ad_Storage: 'denied'});
       load('https://www.clarity.ms/tag/yoaymaxfyd');
