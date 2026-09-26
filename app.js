@@ -22,6 +22,8 @@ let previousOverflow = '';
 document.querySelectorAll('[data-video]').forEach(button => {
   button.addEventListener('click', () => {
     const id = button.dataset.video;
+    // Only numeric TikTok post IDs belong in these fixed-origin URLs.
+    if (!/^\d{19}$/.test(id || '')) return;
     document.querySelector('#video-dialog-title').textContent = button.dataset.title;
     document.querySelector('#video-external').href = `https://www.tiktok.com/@yaneyalow/video/${id}`;
     const iframe = document.createElement('iframe');
@@ -29,6 +31,7 @@ document.querySelectorAll('[data-video]').forEach(button => {
     iframe.src = `https://www.tiktok.com/player/v1/${id}?autoplay=1&rel=0&description=0&music_info=0`;
     iframe.allow = 'autoplay; encrypted-media; fullscreen; picture-in-picture';
     iframe.allowFullscreen = true;
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
     player.replaceChildren(iframe);
     previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
