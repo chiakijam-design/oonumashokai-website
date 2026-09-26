@@ -61,16 +61,10 @@
 @media(max-width:850px){.service-row{grid-template-columns:25px 1fr 100px}.inquiry-prompt{align-items:flex-start;flex-direction:column;gap:20px}}
 @media(max-width:700px){.hero{min-height:690px}.hero-contact-details{display:block;font-size:10px;margin-top:10px}.hero-contact-details strong{font-size:15px}.hero-content{padding-bottom:105px}.inquiry-prompt{padding:23px 20px;margin-top:30px}.inquiry-prompt h3{font-size:19px}.inquiry-prompt .button{width:100%}.service-row{grid-template-columns:22px minmax(0,1fr);gap:10px 13px}.service-row p{grid-column:2;grid-row:2}.service-row>a{grid-column:2;grid-row:3;justify-self:start;width:auto;padding-inline:16px;margin-top:4px}.contact-reassurance{font-size:12px}}
 @media(max-width:360px){.hero{min-height:645px}}
-/* Hero: qualification, official social name and permit supplied by the owner. */
-.hero-credentials{display:grid;grid-template-columns:1.6fr 1fr 1.25fr;gap:0;max-width:860px;margin-bottom:30px;background:#121b17eb;border-top:1px solid #bca878;border-bottom:1px solid #ffffff24;box-shadow:0 8px 28px #00000014}
-.hero-credentials .hero-qualification{position:relative;display:flex;justify-content:center;align-items:flex-start;gap:7px;margin:0;padding:18px 24px;min-width:0;border:0}
-.hero-credentials .hero-qualification+.hero-qualification::before{content:"";position:absolute;left:0;top:21px;bottom:21px;width:1px;background:#c7b79040}
-.hero-credentials .hero-qualification>span{font-size:10px;line-height:1.5;font-weight:500;letter-spacing:.18em;color:#d8c398}
-.hero-credentials .hero-qualification strong{font-size:19px;line-height:1.5;font-weight:600;letter-spacing:.035em;color:#f7f5ef}
-.hero-credentials .hero-qualification:first-child strong{font-size:24px;font-weight:750;letter-spacing:.025em}
-@media(min-width:701px) and (max-width:1000px){.hero-credentials .hero-qualification{padding-inline:18px}.hero-credentials .hero-qualification strong{font-size:17px}.hero-credentials .hero-qualification:first-child strong{font-size:20px}}
-@media(max-width:700px){.hero-credentials{grid-template-columns:1fr 1.35fr;margin-bottom:24px;max-width:460px}.hero-credentials .hero-qualification{padding:13px 17px;gap:4px}.hero-credentials .hero-qualification:first-child{grid-column:1/-1;padding-block:16px;border-bottom:1px solid #c7b79030}.hero-credentials .hero-qualification:nth-child(2)::before{display:none}.hero-credentials .hero-qualification+.hero-qualification::before{top:15px;bottom:15px}.hero-credentials .hero-qualification>span{font-size:9px}.hero-credentials .hero-qualification strong{font-size:16px}.hero-credentials .hero-qualification:first-child strong{font-size:22px}}
-@media(max-width:360px){.hero-credentials .hero-qualification{padding-inline:13px}.hero-credentials .hero-qualification strong{font-size:14px}.hero-credentials .hero-qualification:first-child strong{font-size:20px}}
+/* One owner-supplied statement in the hero band. */
+.hero-statement{display:inline-block;max-width:100%;margin:0 0 30px;padding:20px 28px;background:#121b17eb;border-top:1px solid #bca878;border-bottom:1px solid #ffffff24;color:#f7f5ef;font-size:clamp(20px,2.1vw,28px);font-weight:700;line-height:1.6;letter-spacing:.035em}.hero-statement span{display:inline-block}
+@media(max-width:700px){.hero-statement{padding:16px 18px;margin-bottom:24px;font-size:18px;letter-spacing:.01em}}
+@media(max-width:360px){.hero-statement{padding:14px;font-size:16px;letter-spacing:0}}
 /* Corporate name and owner-supplied construction permit. */
 .brand-corporate{font-size:.46em;font-weight:600;letter-spacing:.015em;margin-right:.35em}.brand-sub{font-size:10px;letter-spacing:.025em;line-height:1.6;white-space:nowrap}
 @media(max-width:700px){.site-header{gap:12px}.brand-sub{font-size:9px;letter-spacing:0}.brand-corporate{margin-right:.2em}}
