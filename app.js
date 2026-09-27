@@ -44,3 +44,23 @@ dialog.addEventListener('close',()=>{ player.replaceChildren(); document.body.st
 
 const comparison = document.querySelector('.comparison');
 document.querySelector('#compare-range').addEventListener('input',e=>comparison.style.setProperty('--split',`${e.target.value}%`));
+
+// Keep all cases readable without JavaScript; progressively reveal six at a time.
+const caseCards = [...document.querySelectorAll('.case-card')];
+const caseMore = document.querySelector('.case-more');
+const caseCount = document.querySelector('#case-count');
+if (caseMore && caseCount && caseCards.length) {
+  let visibleCases = Math.min(6, caseCards.length);
+  function updateCases() {
+    caseCards.forEach((card, index) => { card.hidden = index >= visibleCases; });
+    caseMore.hidden = visibleCases >= caseCards.length;
+    caseCount.textContent = `${caseCards.length}件中 ${visibleCases}件を表示`;
+  }
+  updateCases();
+  caseMore.addEventListener('click', () => {
+    const firstNew = caseCards[visibleCases];
+    visibleCases = Math.min(visibleCases + 6, caseCards.length);
+    updateCases();
+    firstNew?.querySelector('summary').focus();
+  });
+}
