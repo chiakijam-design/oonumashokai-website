@@ -93,6 +93,7 @@
 .case-card summary::-webkit-details-marker{display:none}
 .case-card summary:focus-visible{outline:2px solid var(--ink);outline-offset:7px}
 .case-cover{position:relative;overflow:hidden;background:#d9d6cd}
+.case-comparison{display:block;position:relative;overflow:hidden}.case-before-label{position:absolute;top:3%;left:2%;width:32%;text-align:center;color:#fff;font-family:inherit;font-size:clamp(17px,2.2vw,30px);font-weight:400;line-height:1.4;letter-spacing:.025em;text-shadow:0 1px 5px #0009;pointer-events:none}.case-photo-grid .case-before-label{font-size:clamp(15px,1.8vw,24px)}
 .case-cover img{width:100%;aspect-ratio:4/3;height:auto;object-fit:cover;transition:filter .2s}
 .case-card summary:hover .case-cover img{filter:brightness(.92)}
 .case-photo-count{position:absolute;bottom:16px;left:16px;padding:8px 12px;background:var(--dark);color:var(--paper);font-size:10px;letter-spacing:.12em}
