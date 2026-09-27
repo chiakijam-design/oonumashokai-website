@@ -45,23 +45,47 @@ dialog.addEventListener('close',()=>{ player.replaceChildren(); document.body.st
 const comparison = document.querySelector('.comparison');
 document.querySelector('#compare-range').addEventListener('input',e=>comparison.style.setProperty('--split',`${e.target.value}%`));
 
-// Keep all cases readable without JavaScript; progressively reveal three at a time.
+// Keep every case readable without JavaScript; filters and paging enhance the list.
 const caseCards = [...document.querySelectorAll('.case-card')];
 const caseMore = document.querySelector('.case-more');
 const caseCount = document.querySelector('#case-count');
-if (caseMore && caseCount && caseCards.length) {
+const caseSelection = document.querySelector('#case-selection');
+const caseFilters = [...document.querySelectorAll('[data-case-filter]')];
+if (caseMore && caseCount && caseSelection && caseCards.length) {
   const caseBatchSize = 3;
-  let visibleCases = Math.min(caseBatchSize, caseCards.length);
+  let selectedCategory = 'all';
+  let visibleCases = caseBatchSize;
+  const matchingCases = () => caseCards.filter(card => selectedCategory === 'all' || card.dataset.caseCategory === selectedCategory);
   function updateCases() {
-    caseCards.forEach((card, index) => { card.hidden = index >= visibleCases; });
-    caseMore.hidden = visibleCases >= caseCards.length;
-    caseCount.textContent = `${caseCards.length}件中 ${visibleCases}件を表示`;
+    const matching = matchingCases();
+    const visible = new Set(matching.slice(0, visibleCases));
+    caseCards.forEach(card => {
+      card.hidden = !visible.has(card);
+      if (card.hidden) card.querySelector('details').open = false;
+    });
+    caseMore.hidden = visibleCases >= matching.length;
+    caseCount.textContent = `${matching.length}件中 ${Math.min(visibleCases, matching.length)}件を表示`;
+    caseFilters.forEach(link => {
+      if (link.dataset.caseFilter === selectedCategory) {
+        link.setAttribute('aria-current', 'true');
+        caseSelection.textContent = `${link.textContent}の施工事例`;
+      } else link.removeAttribute('aria-current');
+    });
   }
-  updateCases();
+  function selectFromHash() {
+    const key = location.hash.replace('#cases-', '');
+    const next = caseFilters.some(link => link.dataset.caseFilter === key) ? key : 'all';
+    selectedCategory = next;
+    visibleCases = caseBatchSize;
+    updateCases();
+  }
+  window.addEventListener('hashchange', selectFromHash);
   caseMore.addEventListener('click', () => {
-    const firstNew = caseCards[visibleCases];
-    visibleCases = Math.min(visibleCases + caseBatchSize, caseCards.length);
+    const matching = matchingCases();
+    const firstNew = matching[visibleCases];
+    visibleCases = Math.min(visibleCases + caseBatchSize, matching.length);
     updateCases();
     firstNew?.querySelector('summary').focus();
   });
+  selectFromHash();
 }
