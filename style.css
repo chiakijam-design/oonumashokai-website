@@ -148,3 +148,7 @@
 
 /* Integrated work and case guidance */
 #works,.case-guide[id],#cost-title{scroll-margin-top:110px}.case-exterior-note{display:flex;justify-content:space-between;align-items:center;gap:30px;padding:30px;border-left:3px solid var(--gold);background:var(--paper);margin-top:38px}.case-exterior-note h3{font-size:23px;margin-bottom:12px}.case-exterior-note p{font-size:14px;line-height:2;max-width:650px}.case-exterior-note .text-link{flex-shrink:0;font-size:13px}@media(max-width:700px){.case-exterior-note{display:block;padding:24px 20px;margin-top:30px}.case-exterior-note h3{font-size:21px}.case-exterior-note p{font-size:13px}.case-exterior-note .text-link{margin-top:18px}}
+
+/* Keep the primary mobile contact actions readable, with equal touch targets. */
+@media(max-width:850px){.sticky-inquiry span{font-size:13px}.sticky-inquiry small{font-size:11px}.sticky-inquiry b{margin-left:4px}html{scroll-padding-bottom:calc(100px + env(safe-area-inset-bottom,0px))}}
+@media(max-width:360px){.sticky-inquiry span{font-size:12px}.sticky-inquiry a{padding-inline:5px}.sticky-inquiry b{display:none}}
