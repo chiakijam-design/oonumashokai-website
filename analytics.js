@@ -2,6 +2,17 @@
   'use strict';
   // Production only. Preview, local development and the old staging URL stay unmeasured.
   if (location.hostname !== 'oonumashokai.com' || location.pathname.startsWith('/website-renewal-')) return;
+  // Explicit QA opt-out. This tab-only flag stores no identity or browsing history.
+  // Open every QA tab with ?internal_check=1; ?internal_check=0 clears the flag.
+  const internalCheck = new URL(location.href || location.origin + location.pathname + location.search).searchParams.get('internal_check');
+  let internalTab = internalCheck === '1';
+  try {
+    if (internalCheck === '1') window.sessionStorage.setItem('oonuma:internal-check', '1');
+    if (internalCheck === '0') window.sessionStorage.removeItem('oonuma:internal-check');
+    internalTab = internalTab || window.sessionStorage.getItem('oonuma:internal-check') === '1';
+  } catch { /* Explicit opt-out still works if tab storage is unavailable. */ }
+  // Do not even queue events or consent commands for marked/automated QA visits.
+  if (internalTab || internalCheck === '0' || navigator.webdriver === true) return;
   if (navigator.globalPrivacyControl === true || navigator.doNotTrack === '1') return;
   window.dataLayer = window.dataLayer || [];
   window.gtag = function () { window.dataLayer.push(arguments); };
