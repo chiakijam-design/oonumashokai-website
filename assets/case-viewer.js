@@ -1,5 +1,15 @@
 (() => {
   'use strict';
+  // Make the entire cover (including the photo-count badge) a reliable tap target.
+  // Cancel native summary activation so one tap never toggles the details twice.
+  document.querySelectorAll('.case-card summary .case-cover').forEach(cover => {
+    cover.addEventListener('click', event => {
+      if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      const details = cover.closest('details');
+      details.open = !details.open;
+    });
+  });
   const dialog = document.querySelector('#case-viewer');
   if (!dialog || typeof dialog.showModal !== 'function') return;
   const photo = dialog.querySelector('.case-viewer-photo');
