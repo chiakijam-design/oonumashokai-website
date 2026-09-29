@@ -1,0 +1,5 @@
+.identity-strip.inquiry-strip{flex-wrap:wrap;gap:16px clamp(32px,6vw,96px);padding-block:26px}
+.identity-strip.inquiry-strip>span:first-child{font-size:clamp(17px,2vw,22px);font-weight:600;letter-spacing:.04em}
+.identity-strip.inquiry-strip>a{font-size:15px;min-height:44px;align-items:center;gap:24px;text-decoration:none;border-bottom:1px solid currentColor}
+.identity-strip.inquiry-strip>a:hover{text-decoration:underline;text-underline-offset:5px}
+@media(max-width:600px){.identity-strip.inquiry-strip{flex-direction:column;gap:9px;padding:22px}.identity-strip.inquiry-strip>a{font-size:14px}}
