@@ -240,3 +240,7 @@ main[id] :is(.construction-heading h2,.construction-intro>h2,.construction-selec
   .film-stats dd{font-size:clamp(20px,5.6vw,27px)}
   .film-stats dd small{font-size:10px;margin-inline:1px}
 }
+
+/* Keep the space below the credentials on the paper background. */
+#technique.film-section{margin-top:110px;padding-top:0}
+@media(max-width:700px){#technique.film-section{margin-top:69px}}
