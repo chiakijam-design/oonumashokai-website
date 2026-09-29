@@ -1,21 +1,3 @@
-const menuButton = document.querySelector('.menu-toggle');
-const navigation = document.querySelector('#main-nav');
-function closeMenu(restoreFocus = false) {
-  const focusWasInMenu = navigation.contains(document.activeElement);
-  menuButton.setAttribute('aria-expanded','false');
-  navigation.classList.remove('is-open');
-  if (restoreFocus && focusWasInMenu) menuButton.focus();
-}
-menuButton.addEventListener('click', () => {
-  const open = menuButton.getAttribute('aria-expanded') !== 'true';
-  menuButton.setAttribute('aria-expanded', String(open));
-  navigation.classList.toggle('is-open', open);
-});
-navigation.querySelectorAll('a').forEach(a => a.addEventListener('click', () => closeMenu()));
-document.addEventListener('keydown', e => { if(e.key==='Escape') closeMenu(true); });
-document.addEventListener('click', e => { if(!e.target.closest('.site-header')) closeMenu(); });
-window.matchMedia('(min-width:851px)').addEventListener('change', () => closeMenu());
-
 const dialog = document.querySelector('#video-dialog');
 const player = document.querySelector('#video-player');
 let previousOverflow = '';
