@@ -189,3 +189,21 @@
 .case-story dt{font-weight:650;margin-bottom:.4rem}
 .case-story dd{margin:0;line-height:2;font-size:.95rem}
 @media(max-width:600px){.case-story-index nav{grid-template-columns:1fr}.case-story-index{padding-bottom:2.5rem}}
+
+/* Compact mobile headings: keep prose readable and avoid short trailing lines. */
+@media(max-width:700px){
+  body{font-size:14px}
+  main[id] h1,main[id] h2,main[id] h3,main[id] h4{text-wrap:balance}
+  main[id] h2{font-size:clamp(23px,6.15vw,28px);line-height:1.6;letter-spacing:.015em}
+  main[id] h3{font-size:clamp(18px,4.8vw,21px);line-height:1.65;letter-spacing:0}
+  main[id] .hero h1{font-size:clamp(30px,8.2vw,36px);line-height:1.5}
+  main[id] .blog-hero h1,main[id] .job-hero h1{font-size:clamp(27px,7.2vw,32px);line-height:1.6;letter-spacing:.025em}
+  main[id] .blog-article-heading h1{font-size:clamp(24px,6.3vw,28px);line-height:1.65}
+  main[id] .blog-card h2{font-size:20px}
+  main[id] .blog-article-body h2,main[id] .blog-related h2{font-size:22px}
+  main[id] .video-caption h3{font-size:13px}
+  main[id] .case-story h4,main[id] .case-process-intro h4{font-size:17px;line-height:1.7}
+  .contact-page main #contact-title{font-size:clamp(23px,6.15vw,28px)}
+  main[id] p{text-wrap:pretty}
+  .rain-leak-steps>li{grid-template-columns:26px minmax(0,1fr);gap:12px}
+}
