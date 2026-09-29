@@ -244,3 +244,7 @@ main[id] :is(.construction-heading h2,.construction-intro>h2,.construction-selec
 /* Keep the space below the credentials on the paper background. */
 #technique.film-section{margin-top:110px;padding-top:0}
 @media(max-width:700px){#technique.film-section{margin-top:69px}}
+
+/* Alternate only light homepage sections, independently of dark feature sections. */
+main>.home-light{background:var(--paper)}
+main>.home-light:nth-child(even of .home-light){background:#eee9de}
