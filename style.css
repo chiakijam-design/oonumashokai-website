@@ -248,3 +248,9 @@ main[id] :is(.construction-heading h2,.construction-intro>h2,.construction-selec
 /* Alternate only light homepage sections, independently of dark feature sections. */
 main>.home-light{background:var(--paper)}
 main>.home-light:nth-child(even of .home-light){background:#eee9de}
+
+/* Photo and excerpt from the same Google review; original image is unchanged. */
+.reviews-section .review-feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);align-items:center;border-top:1px solid var(--ink);padding-top:28px;margin-bottom:55px}
+.review-feature-photo{margin:0;min-width:0}.review-feature-photo img{display:block;width:100%;height:auto}.review-feature-photo figcaption{font-size:11px;line-height:1.8;color:var(--muted);margin-top:12px}
+.review-feature-copy{min-width:0}.review-feature-copy h3{font-size:clamp(19px,1.7vw,27px);line-height:1.7;margin:0 0 20px}.review-feature-copy blockquote{font-size:15px;line-height:2.05;color:#555b51;margin:0}.review-feature-copy .text-link{font-size:12px;margin-top:24px}.review-feature-copy .review-top{margin-bottom:24px}
+@media(max-width:850px){.reviews-section .review-feature{grid-template-columns:1fr;gap:24px;margin-bottom:38px}.review-feature-copy blockquote{font-size:14px;line-height:2}.review-feature-copy .review-top{margin-bottom:16px}.review-feature-copy h3{font-size:20px;margin-bottom:15px}.review-feature-photo figcaption{font-size:10px}}
