@@ -297,7 +297,7 @@ main>.home-light:nth-child(even of .home-light){background:#eee9de}
 .hero .hero-contact-details{margin-top:13px}
 .hero-work-link{display:block;border:1px solid #e4d6b178;background:#171d19d9;min-width:0;transition:border-color .2s}
 .hero-work-link:hover{border-color:#e6cc97}
-.hero-work-images{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;overflow:hidden}
+.hero-work-images{display:block;overflow:hidden}
 .hero-work-images img{display:block;width:100%;height:300px;object-fit:cover}
 .hero-work-caption{display:flex;align-items:center;gap:15px;padding:24px 20px;font-size:15px;line-height:1.7}
 .hero-work-caption>span:last-child{margin-left:auto;font-size:25px}
