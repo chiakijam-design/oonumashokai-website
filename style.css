@@ -277,6 +277,59 @@ main>.home-light:nth-child(even of .home-light){background:#eee9de}
 .review-viewer-error { position: absolute; padding: 16px; background: #191e1b; }
 @media (max-height: 500px) { .review-viewer { gap: 4px; padding: 6px 16px; } .review-viewer-caption { margin-bottom: 4px; } .review-viewer-original { margin-top: 2px; } }
 
+/* Concrete proof and real workmanship in the opening view. */
+.hero .hero-impact{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);align-items:center;gap:clamp(32px,5vw,88px);padding-top:48px;padding-bottom:44px}
+.hero h1{font-size:clamp(48px,4.9vw,70px);line-height:1.3}
+.hero-copy{min-width:0}
+.hero .hero-statement{font-size:clamp(15px,1.45vw,21px);font-weight:600;color:#e6cc97;letter-spacing:.06em;margin-bottom:22px;display:flex;flex-wrap:wrap;gap:0 .7em}
+.hero .hero-title-phrase{display:block}
+.hero .hero-description{margin-top:20px;font-size:15px}
+.hero-proof{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:590px;border-block:1px solid #e4d6b14d;padding:20px 0 18px;margin-top:24px}
+.hero-proof>div{min-width:0}
+.hero-proof>div+div{border-left:1px solid #e4d6b14d;padding-left:24px}
+.hero-proof dt{font-size:11px;line-height:1.7;color:#eee8dc}
+.hero-proof dd{display:flex;align-items:baseline;gap:7px;margin:7px 0 0;white-space:nowrap}
+.hero-proof dd strong{font-size:clamp(35px,3.8vw,52px);line-height:1.15;font-weight:650;letter-spacing:0;color:#e6cc97;font-variant-numeric:tabular-nums}
+.hero-proof dd span{font-size:13px}
+.hero .hero-proof-note{font-size:10px;line-height:1.8;margin-top:9px;color:#d1cec4}
+.hero .hero-actions{margin-top:24px}
+.hero .hero-consult{margin-top:0}
+.hero .hero-contact-details{margin-top:13px}
+.hero-work-link{display:block;border:1px solid #e4d6b178;background:#171d19d9;min-width:0;transition:border-color .2s}
+.hero-work-link:hover{border-color:#e6cc97}
+.hero-work-images{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;overflow:hidden}
+.hero-work-images img{display:block;width:100%;height:300px;object-fit:cover}
+.hero-work-caption{display:flex;align-items:center;gap:15px;padding:24px 20px;font-size:15px;line-height:1.7}
+.hero-work-caption>span:last-child{margin-left:auto;font-size:25px}
+.hero-work-caption small{display:block;color:#d1cec4;font-size:10px;margin-top:5px}
+.hero-work-caption .small-play{flex-shrink:0}
+@media(max-width:1100px){.hero .hero-impact{grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:30px}.hero-work-images img{height:260px}.hero-work-caption{padding:20px 14px;gap:10px;font-size:13px}}
+@media(max-width:850px){.hero .hero-impact{grid-template-columns:1fr;gap:25px;padding-top:46px;padding-bottom:44px}.hero-work-link{max-width:590px;display:grid;grid-template-columns:130px minmax(0,1fr)}.hero-work-images img{height:94px}.hero-work-caption{padding:14px 20px}.hero-work-caption small{margin-top:2px}}
+@media(max-width:700px){
+ .hero{min-height:0}
+ .hero .hero-impact{padding-top:35px;padding-bottom:32px;gap:22px}
+ .hero .hero-statement{font-size:13px;letter-spacing:.025em;gap:0 .5em;margin-bottom:18px;padding-right:44px}
+ main[id] .hero h1{font-size:clamp(33px,9.2vw,42px);line-height:1.4}
+ .hero .hero-description{font-size:13px;line-height:1.9;margin-top:18px}
+ .hero-proof{gap:12px;padding:16px 0 15px;margin-top:22px}
+ .hero-proof>div+div{padding-left:12px}
+ .hero-proof dt{font-size:10px;letter-spacing:0}
+ .hero-proof dd{gap:4px;margin-top:8px}
+ .hero-proof dd strong{font-size:clamp(29px,8.2vw,35px)}
+ .hero-proof dd span{font-size:11px}
+ .hero .hero-proof-note{font-size:9px;margin-top:8px}
+ .hero .hero-actions{margin-top:20px}
+ .hero .hero-consult{min-height:54px;padding:15px 22px;font-size:13px}
+ .hero .hero-contact-details{margin-top:11px}
+ .hero-work-link{grid-template-columns:104px minmax(0,1fr)}
+ .hero-work-images img{height:82px}
+ .hero-work-caption{padding:12px;gap:9px;font-size:12px}
+ .hero-work-caption .small-play{width:30px;height:30px;font-size:9px}
+ .hero-work-caption small{font-size:9px}
+ .hero-work-caption>span:last-child{font-size:20px}
+}
+@media(max-width:360px){.hero .hero-statement{font-size:12px}.hero-work-link{grid-template-columns:85px minmax(0,1fr)}.hero-work-caption{padding-inline:10px;gap:7px}.hero-proof dt{font-size:9px}.hero-proof dd strong{font-size:29px}}
+
 /* Dated overall Google review score. */
 .review-rating-summary{flex:0 1 330px;min-width:0}
 .review-rating-label{font-size:13px;line-height:1.8;color:var(--muted)}
